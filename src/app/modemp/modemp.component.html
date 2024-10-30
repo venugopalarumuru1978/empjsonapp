@@ -1,0 +1,64 @@
+<div class="row">    
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <b>Update Employee Information</b>
+                    </div>
+                    <div class="col-lg-4" style="text-align: right;">
+                    <a routerLink="/empall"><b>Back</b></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="UpdateEmp()">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label>Emp No</label>
+                        <input type="text"  class="form-control"
+                         [(ngModel)]="emp.id"
+                         name="id" disabled />
+                    </div>
+                    <div class="col-lg-4">
+                        <label>Emp Name</label>
+                        <input type="text"  class="form-control"
+                         [(ngModel)]="emp.ename" name="ename" />
+                    </div>
+                    <div class="col-lg-4">
+                        <label>Emp Job</label>
+                        <input type="text"  class="form-control"
+                         [(ngModel)]="emp.job" name="job" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label>Salary</label>
+                        <input type="text"  class="form-control"
+                         [(ngModel)]="emp.salary" name="salary" />
+                    </div>
+                    <div class="col-lg-4">
+                        <label>Emp Email</label>
+                        <input type="text"  class="form-control" 
+                         [(ngModel)]="emp.mailid" name="mailid"/>
+                    </div>
+                    <div class="col-lg-4">
+                        <label>Email Password</label>
+                        <input type="text"  class="form-control"
+                         [(ngModel)]="emp.pswd" name="pswd" disabled />
+                    </div>
+                </div>
+<br />
+                <div class="row">
+                    <div class="col-lg-12" style="text-align: center;">
+                        <input type="submit"  value="Update Emp"   class="btn btn-success" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="reset"  value="Reset"   class="btn btn-danger" />
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>

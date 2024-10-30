@@ -1,0 +1,58 @@
+<div class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header bg-info">
+                    <b>Login Here</b>
+                </div>
+                <div class="card-body">
+                    <form #loginForm="ngForm" (ngSubmit)="LoginFun(loginForm)">
+                    <label>Username</label>
+                    <input type="text" [(ngModel)]="username" 
+                    placeholder="Username" 
+                    class="form-control"
+                    name="username"
+                    #uname="ngModel" minlength="3" required />
+
+                    <span class="error"  *ngIf="uname.touched && uname.invalid">
+                        Username should not be blank
+                    </span>
+
+                    <br />
+
+                    <label>Password</label>
+                    <input type="password" [(ngModel)]="pswd"
+                    name="pswd" 
+                    placeholder="Password" 
+                    class="form-control"
+                    #pwd="ngModel" required/>
+
+                    <span class="error"  *ngIf="pwd.touched && pwd.invalid">
+                        Password should not be blank
+                    </span>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-12" style="text-align: center;">
+                            <input type="submit"  value="Login Here" class="btn btn-primary" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="reset"  value="Reset Here" class="btn btn-danger" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-12" style="text-align: center;">
+                            <p style="font-weight: bold;color:red" *ngIf="!flag">{{msg}}</p>
+                            <p style="font-weight: bold;color:green" *ngIf="flag">{{msg}}</p>            
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
